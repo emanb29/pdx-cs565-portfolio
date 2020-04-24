@@ -14,12 +14,19 @@
     <b-badge class="bg-primary mx-n3 py-2 d-block">
       Technologies ribbon
     </b-badge>
+    <img
+      v-if="projectSource"
+      :src="projectSource.icon"
+      :alt="projectSource.alt"
+      class="project-src"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { CardPlugin } from 'bootstrap-vue'
+import { ProjectSource } from '~/assets/project-sources'
 Vue.use(CardPlugin)
 
 export default Vue.extend({
@@ -33,10 +40,15 @@ export default Vue.extend({
       type: String,
       default: '',
       required: false
+    },
+    projectSource: {
+      type: ProjectSource,
+      required: false,
+      default: null
     }
   },
   computed: {
-    displayTitle() {
+    displayTitle(): String {
       if (this.title == null || this.title === '')
         return `My ${this.year} Project`
       else return this.title

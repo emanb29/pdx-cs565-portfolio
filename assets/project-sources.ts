@@ -1,4 +1,4 @@
-type ImageSrc = String | ImageData | null
+type ImageSrc = String
 export class ProjectSource {
   icon: ImageSrc
   name: String
@@ -10,13 +10,16 @@ export class ProjectSource {
   }
 }
 
-export const Pacific = new ProjectSource(null, 'Pacific University')
+export const Pacific = new ProjectSource('', 'Pacific University')
 export const PortlandState = new ProjectSource(
-  null,
+  '',
   'Portland State University',
   "The Portland State University logo includes intertwined letters P, S and U that represent the interconnectedness of the university to the city, region and world, and the words 'Portland State University'."
 )
 
-export const ProjectSources: Array<ProjectSource> = [Pacific, PortlandState]
+export const ProjectSources = {
+  Pacific,
+  PortlandState
+}
 
 export default ProjectSources

@@ -8,7 +8,11 @@
       <h2 class="subtitle">
         A Review-style Portfolio
       </h2>
-      <project-card title="" :year="2020">
+      <project-card
+        title=""
+        :year="2020"
+        :project-source="ProjectSources.Pacific"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic
         suscipit dicta pariatur laborum aliquam libero ullam facilis amet
         quidem? Quibusdam eos aperiam maxime dolores, ex quidem dicta possimus
@@ -34,11 +38,17 @@
 import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
 import ProjectCard from '~/components/ProjectCard.vue'
+import { ProjectSources } from '~/assets/project-sources'
 
 export default Vue.extend({
   components: {
     Logo,
     ProjectCard
+  },
+  data() {
+    return {
+      ProjectSources
+    }
   }
 })
 </script>
