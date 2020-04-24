@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <div class="w-100">
       <logo />
       <h1 class="title">
         Replay My Career
@@ -42,11 +42,13 @@ export default Vue.extend({
       ProjectSources,
       projects: [
         new Project(
-          'Lorem Ipsum',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis.',
           'Example Project',
           2017,
           ProjectSources.PortlandState
-        )
+        ),
+        new Project('A very empty project', null, null, ProjectSources.Pacific),
+        new Project('A very empty project', null, 2020)
       ]
     }
   }

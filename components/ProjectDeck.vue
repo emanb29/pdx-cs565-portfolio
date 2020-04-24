@@ -1,8 +1,9 @@
 <template>
-  <div class="project-deck">
+  <div class="project-deck d-flex flex-row flex-wrap justify-content-around">
     <project-card
       v-for="proj in _projects"
-      :key="proj.name"
+      :key="proj.name + ': ' + proj.description"
+      class="col-12 col-md-5 col-xl-3 px-0 my-3"
       :title="proj.name"
       :year="proj.year"
       :project-source="proj.source"
@@ -36,4 +37,4 @@ export default Vue.extend({
 })
 </script>
 
-<style></style>
+<style lang="scss"></style>
