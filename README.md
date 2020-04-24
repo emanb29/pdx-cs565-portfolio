@@ -1,6 +1,6 @@
 # pdx-cs565-portfolio
 
-> A Review-style Portfolio
+> A Card-Based Portfolio
 
 ## Build Setup
 

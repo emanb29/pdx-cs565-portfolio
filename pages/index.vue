@@ -3,15 +3,16 @@
     <div>
       <logo />
       <h1 class="title">
-        Recreate My Career
+        Replay My Career
       </h1>
       <h2 class="subtitle">
-        A Review-style Portfolio
+        A Card-Based Portfolio
       </h2>
       <project-card
         title="Example Project"
         :year="2020"
         :project-source="ProjectSources.PortlandState"
+        project-url="https://github.com/emanb29"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic
         suscipit dicta pariatur laborum aliquam libero ullam facilis amet

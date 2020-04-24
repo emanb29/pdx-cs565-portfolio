@@ -1,12 +1,24 @@
 <template>
   <div class="card project-card d-flex">
-    <div class="badge-container align-self-end position-relative">
+    <div
+      v-if="year !== null"
+      class="badge-container align-self-end position-relative"
+    >
       <b-badge pill variant="primary" class="year p-3 position-absolute">
         {{ year }}
       </b-badge>
     </div>
     <div class="card-body text-left">
-      <h3 class="card-title">{{ displayTitle }}</h3>
+      <h3 class="card-title">
+        <a
+          v-if="projectUrl !== null"
+          class="project-title link"
+          :href="projectUrl"
+        >
+          {{ displayTitle }}
+        </a>
+        <span v-else class="project-title nolink">{{ displayTitle }}</span>
+      </h3>
       <p>
         <slot></slot>
       </p>
@@ -32,7 +44,8 @@ export default Vue.extend({
   props: {
     year: {
       type: Number,
-      required: true,
+      required: false,
+      default: null,
       validator: (x) => x >= 1000 && x <= 9999 // four digits, please
     },
     title: {
@@ -42,6 +55,11 @@ export default Vue.extend({
     },
     projectSource: {
       type: ProjectSource,
+      required: false,
+      default: null
+    },
+    projectUrl: {
+      type: URL,
       required: false,
       default: null
     }

@@ -1,7 +1,7 @@
 {
   "name": "pdx-cs565-portfolio",
   "version": "1.0.0",
-  "description": "A Review-style Portfolio",
+  "description": "A Card-Based Portfolio",
   "author": "emanb29",
   "private": true,
   "scripts": {
