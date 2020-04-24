@@ -3,11 +3,17 @@
     <div>
       <logo />
       <h1 class="title">
-        pdx-cs565-portfolio
+        Recreate My Career
       </h1>
       <h2 class="subtitle">
         A Review-style Portfolio
       </h2>
+      <project-card title="" :year="2020">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic
+        suscipit dicta pariatur laborum aliquam libero ullam facilis amet
+        quidem? Quibusdam eos aperiam maxime dolores, ex quidem dicta possimus
+        placeat!
+      </project-card>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -27,10 +33,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
+import ProjectCard from '~/components/ProjectCard.vue'
 
 export default Vue.extend({
   components: {
-    Logo
+    Logo,
+    ProjectCard
   }
 })
 </script>

@@ -1,0 +1,22 @@
+type ImageSrc = String | ImageData | null
+export class ProjectSource {
+  icon: ImageSrc
+  name: String
+  alt: String
+  constructor(icon: ImageSrc, name: String, alt: String = name) {
+    this.icon = icon
+    this.name = name
+    this.alt = alt
+  }
+}
+
+export const Pacific = new ProjectSource(null, 'Pacific University')
+export const PortlandState = new ProjectSource(
+  null,
+  'Portland State University',
+  "The Portland State University logo includes intertwined letters P, S and U that represent the interconnectedness of the university to the city, region and world, and the words 'Portland State University'."
+)
+
+export const ProjectSources: Array<ProjectSource> = [Pacific, PortlandState]
+
+export default ProjectSources
