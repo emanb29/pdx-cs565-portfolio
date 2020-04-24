@@ -37,7 +37,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { CardPlugin } from 'bootstrap-vue'
-import { ProjectSource } from '~/assets/project-sources'
+import { ProjectSource } from '~/assets/models/project-sources'
 Vue.use(CardPlugin)
 
 export default Vue.extend({
@@ -59,15 +59,15 @@ export default Vue.extend({
       default: null
     },
     projectUrl: {
-      type: URL,
+      type: String,
       required: false,
       default: null
     }
   },
   computed: {
     displayTitle(): String {
-      if (this.title == null || this.title === '')
-        return `My ${this.year} Project`
+      if (this.title === null || this.title === '')
+        return `My${this.year ? ' ' + this.year : ''} Project`
       else return this.title
     }
   }

@@ -8,17 +8,7 @@
       <h2 class="subtitle">
         A Card-Based Portfolio
       </h2>
-      <project-card
-        title="Example Project"
-        :year="2020"
-        :project-source="ProjectSources.PortlandState"
-        project-url="https://github.com/emanb29"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic
-        suscipit dicta pariatur laborum aliquam libero ullam facilis amet
-        quidem? Quibusdam eos aperiam maxime dolores, ex quidem dicta possimus
-        placeat!
-      </project-card>
+      <project-deck :projects="projects"></project-deck>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -38,17 +28,26 @@
 <script lang="ts">
 import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
-import ProjectCard from '~/components/ProjectCard.vue'
-import { ProjectSources } from '~/assets/project-sources'
+import ProjectDeck from '~/components/ProjectDeck.vue'
+import { ProjectSources } from '~/assets/models/project-sources'
+import { Project } from '~/assets/models/project'
 
 export default Vue.extend({
   components: {
     Logo,
-    ProjectCard
+    ProjectDeck
   },
   data() {
     return {
-      ProjectSources
+      ProjectSources,
+      projects: [
+        new Project(
+          'Lorem Ipsum',
+          'Example Project',
+          2017,
+          ProjectSources.PortlandState
+        )
+      ]
     }
   }
 })
