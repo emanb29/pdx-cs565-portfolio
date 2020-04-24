@@ -9,9 +9,9 @@
         A Review-style Portfolio
       </h2>
       <project-card
-        title=""
+        title="Example Project"
         :year="2020"
-        :project-source="ProjectSources.Pacific"
+        :project-source="ProjectSources.PortlandState"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic
         suscipit dicta pariatur laborum aliquam libero ullam facilis amet

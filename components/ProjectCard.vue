@@ -11,15 +11,14 @@
         <slot></slot>
       </p>
     </div>
-    <b-badge class="bg-primary mx-n3 py-2 d-block">
+    <b-badge class="bg-primary mx-n3 mb-2 py-2 d-block">
       Technologies ribbon
     </b-badge>
-    <img
-      v-if="projectSource"
-      :src="projectSource.icon"
-      :alt="projectSource.alt"
-      class="project-src"
-    />
+    <div v-if="projectSource" class="project-src mb-2">
+      (at
+      <img :src="projectSource.icon" :alt="projectSource.alt" class="icon" />
+      {{ projectSource.name }})
+    </div>
   </div>
 </template>
 
@@ -66,6 +65,12 @@ export default Vue.extend({
     .year {
       right: -1 * $spacer;
       top: map-get($spacers, 1) - map-get($spacers, 3);
+    }
+  }
+  .project-src {
+    .icon {
+      display: inline-block;
+      height: 1.5em;
     }
   }
 }
