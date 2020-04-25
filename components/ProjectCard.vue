@@ -1,40 +1,38 @@
 <template>
-  <div class="project-card-wrapper px-3 px-sm-0">
-    <div class="card project-card d-flex">
-      <div
-        v-if="year !== null"
-        class="badge-container align-self-end position-relative"
-      >
-        <b-badge pill variant="primary" class="year p-3 position-absolute">
-          {{ year }}
-        </b-badge>
-      </div>
-      <div class="card-body text-left">
-        <h3 class="card-title">
-          <a
-            v-if="projectUrl !== null"
-            class="project-title link"
-            :href="projectUrl"
-          >
-            {{ displayTitle }}
-          </a>
-          <span v-else class="project-title nolink">{{ displayTitle }}</span>
-        </h3>
-        <span class="project-description"><slot></slot></span>
-      </div>
-      <b-badge
-        v-if="_technologies.length !== 0"
-        class="bg-primary mx-n3 py-2 d-block techs-ribbon"
-      >
-        <span v-for="tech in _technologies" :key="tech" class="tech-name">
-          {{ tech }}
-        </span>
+  <div class="card project-card d-flex">
+    <div
+      v-if="year !== null"
+      class="badge-container align-self-end position-relative"
+    >
+      <b-badge pill variant="primary" class="year p-3 position-absolute">
+        {{ year }}
       </b-badge>
-      <div v-if="projectSource" class="project-src mb-2">
-        (at
-        <img :src="projectSource.icon" :alt="projectSource.alt" class="icon" />
-        {{ projectSource.name }})
-      </div>
+    </div>
+    <div class="card-body text-left">
+      <h3 class="card-title">
+        <a
+          v-if="projectUrl !== null"
+          class="project-title link"
+          :href="projectUrl"
+        >
+          {{ displayTitle }}
+        </a>
+        <span v-else class="project-title nolink">{{ displayTitle }}</span>
+      </h3>
+      <span class="project-description"><slot></slot></span>
+    </div>
+    <b-badge
+      v-if="_technologies.length !== 0"
+      class="bg-primary mx-n3 py-2 d-block techs-ribbon"
+    >
+      <span v-for="tech in _technologies" :key="tech" class="tech-name">
+        {{ tech }}
+      </span>
+    </b-badge>
+    <div v-if="projectSource" class="project-src mb-2">
+      (at
+      <img :src="projectSource.icon" :alt="projectSource.alt" class="icon" />
+      {{ projectSource.name }})
     </div>
   </div>
 </template>

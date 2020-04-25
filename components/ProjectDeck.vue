@@ -1,13 +1,13 @@
 <template>
-  <div class="project-deck d-flex flex-row flex-wrap justify-content-start">
+  <div class="project-deck row row-cols-1 row-cols-md-2 row-cols-xl-3">
     <div
       v-for="proj in _projects"
       :key="proj.name + ': ' + proj.description"
-      class="deck-col col-12 col-md-6 col-xl-4 px-4"
+      class="deck-col col my-2 px-4"
     >
       <project-card
         :title="proj.name"
-        class="px-0 my-2"
+        class="h-100"
         :year="proj.year"
         :project-source="proj.source"
         :technologies="proj.techsUsed"
