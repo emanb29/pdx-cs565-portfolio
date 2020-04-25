@@ -23,7 +23,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="contact-mesage">Submit your message:</label>
+          <label for="contact-message">Submit your message:</label>
           <textarea
             id="contact-message"
             class="form-control"
@@ -46,12 +46,21 @@
         </div>
       </form>
     </div>
-  </div></template
->
+  </div>
+</template>
 
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({})
 </script>
 
-<style></style>
+<style lang="scss">
+.form-group.required {
+  label {
+    &::after {
+      content: ' *';
+      color: red;
+    }
+  }
+}
+</style>
