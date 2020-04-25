@@ -67,7 +67,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    displayTitle(): String {
+    displayTitle(): string {
       if (this.title === null || this.title === '')
         return `My${this.year ? ' ' + this.year : ''} Project`
       else return this.title

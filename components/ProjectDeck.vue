@@ -31,7 +31,17 @@ export default Vue.extend({
   computed: {
     // Gross hack to work around bug https://github.com/vuejs/vetur/issues/1242 in Vetur
     _projects(): Array<Project> {
-      return this.projects as Array<Project>
+      // but we can use this to sort to the order we want
+      const unsorted = this.projects as Array<Project>
+      return unsorted
+        .map((project) => {
+          return {
+            project,
+            year: (project.year || 0) as number
+          }
+        })
+        .sort((l, r) => l.year - r.year)
+        .map((o) => o.project)
     }
   }
 })

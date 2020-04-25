@@ -1,9 +1,9 @@
-type ImageSrc = String
+type ImageSrc = string
 export class ProjectSource {
   readonly icon: ImageSrc
-  readonly name: String
-  readonly alt: String
-  constructor(icon: ImageSrc, name: String, alt: String = name) {
+  readonly name: string
+  readonly alt: string
+  constructor(icon: ImageSrc, name: string, alt: string = name) {
     this.icon = icon
     this.name = name
     this.alt = alt

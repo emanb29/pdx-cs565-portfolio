@@ -1,13 +1,13 @@
 import { ProjectSource } from '~/assets/models/project-sources'
 export class Project {
-  readonly name: String
-  readonly description: String
-  readonly year: Number | null
+  readonly name: string
+  readonly description: string
+  readonly year: number | null
   readonly source: ProjectSource | null
   constructor(
-    description: String,
-    name: String | null = null,
-    year: Number | null = null,
+    description: string,
+    name: string | null = null,
+    year: number | null = null,
     source: ProjectSource | null = null
   ) {
     this.description = description
