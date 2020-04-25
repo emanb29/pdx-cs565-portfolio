@@ -12,7 +12,9 @@
         </section>
         <section id="about" class="about">
           <header class="h1">About Me</header>
-          <p class="lead text-left border border-secondary rounded p-3">
+          <p
+            class="lead text-left border border-secondary bg-white rounded p-3"
+          >
             Lifelong learner with a focus on integrating new technologies to
             create powerful and secure applications. Current interests include
             penetration testing, functional programming, and stream processing.
