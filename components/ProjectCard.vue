@@ -87,8 +87,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bootstrap-vue/src/_variables';
+@import '@/assets/scss/bootstrap_config.scss';
 .project-card {
   .badge-container {
     height: 0;

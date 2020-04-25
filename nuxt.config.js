@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@assets/scss/bootstrap_config.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -40,6 +40,10 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa'
   ],
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
+  },
   /*
    ** Build configuration
    */
