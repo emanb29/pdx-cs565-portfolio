@@ -37,11 +37,12 @@ export default Vue.extend({
         .map((project) => {
           return {
             project,
-            year: (project.year || 0) as number
+            sortOn: (project.year || 0) as number // if no year is present, use a default of 0 so projects with no year go at the end
           }
         })
-        .sort((l, r) => l.year - r.year)
+        .sort((l, r) => l.sortOn - r.sortOn)
         .map((o) => o.project)
+        .reverse() // Date-descending is better for projects lists
     }
   }
 })
