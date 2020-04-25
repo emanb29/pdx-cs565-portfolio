@@ -20,11 +20,12 @@
           </a>
           <span v-else class="project-title nolink">{{ displayTitle }}</span>
         </h3>
-        <p>
-          <slot></slot>
-        </p>
+        <slot></slot>
       </div>
-      <b-badge class="bg-primary mx-n3 mb-2 py-2 d-block techs-ribbon">
+      <b-badge
+        v-if="_technologies.length !== 0"
+        class="bg-primary mx-n3 mb-3 py-2 d-block techs-ribbon"
+      >
         Technologies ribbon
       </b-badge>
       <div v-if="projectSource" class="project-src mb-2">
@@ -47,7 +48,7 @@ export default Vue.extend({
     year: {
       type: Number,
       required: false,
-      default: null,
+      default: () => null,
       validator: (x) => x >= 1000 && x <= 9999 // four digits, please
     },
     title: {
@@ -64,6 +65,11 @@ export default Vue.extend({
       type: String,
       required: false,
       default: null
+    },
+    technologies: {
+      type: Array,
+      required: false,
+      default: () => []
     }
   },
   computed: {
@@ -71,6 +77,10 @@ export default Vue.extend({
       if (this.title === null || this.title === '')
         return `My${this.year ? ' ' + this.year : ''} Project`
       else return this.title
+    },
+    _technologies(): Array<string> {
+      // [...x] makes a shallow copy of x
+      return ([...this.technologies] as Array<string>).sort()
     }
   }
 })

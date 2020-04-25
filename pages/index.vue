@@ -45,9 +45,16 @@ export default Vue.extend({
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis.',
           'Example Project',
           2017,
+          ['TypeScript', 'CSS', 'Bootstrap', 'Nuxt.JS', 'Vue'],
           ProjectSources.PortlandState
         ),
-        new Project('A very empty project', null, null, ProjectSources.Pacific),
+        new Project(
+          'A very empty project',
+          null,
+          null,
+          [],
+          ProjectSources.Pacific
+        ),
         new Project('A very empty project', null, 2020)
       ]
     }

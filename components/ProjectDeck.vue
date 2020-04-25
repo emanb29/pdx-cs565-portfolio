@@ -7,6 +7,7 @@
       :title="proj.name"
       :year="proj.year"
       :project-source="proj.source"
+      :technologies="proj.techsUsed"
     >
       {{ proj.description }}
     </project-card>
@@ -31,8 +32,9 @@ export default Vue.extend({
   computed: {
     // Gross hack to work around bug https://github.com/vuejs/vetur/issues/1242 in Vetur
     _projects(): Array<Project> {
-      // but we can use this to sort to the order we want
-      const unsorted = this.projects as Array<Project>
+      // ... but we can use this to sort to the order we want
+      // [...x] makes a shallow copy of x
+      const unsorted = [...this.projects] as Array<Project>
       return unsorted
         .map((project) => {
           return {
