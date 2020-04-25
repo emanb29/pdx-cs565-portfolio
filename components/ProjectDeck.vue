@@ -1,16 +1,20 @@
 <template>
-  <div class="project-deck d-flex flex-row flex-wrap justify-content-around">
-    <project-card
+  <div class="project-deck d-flex flex-row flex-wrap justify-content-start">
+    <div
       v-for="proj in _projects"
       :key="proj.name + ': ' + proj.description"
-      class="col-12 col-md-5 col-xl-3 px-0 my-2"
-      :title="proj.name"
-      :year="proj.year"
-      :project-source="proj.source"
-      :technologies="proj.techsUsed"
+      class="deck-col col-12 col-md-6 col-xl-4 px-4"
     >
-      {{ proj.description }}
-    </project-card>
+      <project-card
+        :title="proj.name"
+        class="px-0 my-2"
+        :year="proj.year"
+        :project-source="proj.source"
+        :technologies="proj.techsUsed"
+      >
+        {{ proj.description }}
+      </project-card>
+    </div>
   </div>
 </template>
 
