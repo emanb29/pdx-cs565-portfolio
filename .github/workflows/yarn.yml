@@ -18,7 +18,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Run Linter
+    - name: Install Dependencies
       uses: Borales/actions-yarn@v2.1.0
       with:
         cmd: install
@@ -31,11 +31,17 @@ jobs:
     needs:
      - lint
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Dependencies
+      uses: Borales/actions-yarn@v2.1.0
+      with:
+        cmd: install
     - name: Generate Static Site
       uses: Borales/actions-yarn@v2.1.0
       with:
         cmd: generate
-    - name: Upload built site
+    - name: Upload Built Site
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
