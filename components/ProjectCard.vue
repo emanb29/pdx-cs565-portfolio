@@ -26,7 +26,9 @@
         v-if="_technologies.length !== 0"
         class="bg-primary mx-n3 mb-3 py-2 d-block techs-ribbon"
       >
-        Technologies ribbon
+        <span v-for="tech in _technologies" :key="tech" class="tech-name">
+          {{ tech }}
+        </span>
       </b-badge>
       <div v-if="projectSource" class="project-src mb-2">
         (at
@@ -100,6 +102,9 @@ export default Vue.extend({
   }
   .techs-ribbon {
     font-weight: lighter;
+    .tech-name:not(:first-child):before {
+      content: '|';
+    }
   }
   .project-src {
     .icon {
