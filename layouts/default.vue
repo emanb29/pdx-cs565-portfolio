@@ -23,6 +23,14 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background-image: url('~assets/squirreldash.png');
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: bottom 20px right 20px;
+  background-attachment: fixed;
+}
+
 *,
 *:before,
 *:after {

@@ -26,6 +26,12 @@
           <header class="h1">Contact</header>
           <contact-card />
         </section>
+        <section id="attribution" role="contentinfo">
+          <small class="text-muted">
+            Squirrel watermark courtesy of
+            <a href="https://favpng.com/">https://favpng.com/</a>
+          </small>
+        </section>
       </div>
     </div>
   </div>
