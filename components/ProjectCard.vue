@@ -39,9 +39,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { CardPlugin } from 'bootstrap-vue'
 import { ProjectSource } from '~/assets/models/project-sources'
-Vue.use(CardPlugin)
 
 export default Vue.extend({
   props: {
