@@ -1,21 +1,6 @@
 <template>
-  <div id="top" class="page position-relative">
-    <b-navbar
-      type="light"
-      class="bg-white border-bottom"
-      toggleable="md"
-      sticky
-    >
-      <b-navbar-brand href="#top">Portfolio</b-navbar-brand>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#about">About</b-nav-item>
-          <b-nav-item href="#projects">Projects</b-nav-item>
-          <b-nav-item href="#contact">Contact</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+  <div class="page position-relative">
+    <smart-nav :links="navLinks" />
     <div class="container">
       <div class="w-100">
         <h1 class="title display-1">
@@ -55,18 +40,25 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import SmartNav from '~/components/SmartNav.vue'
 import ProjectDeck from '~/components/ProjectDeck.vue'
 import { ProjectSources } from '~/assets/models/project-sources'
 import { Project } from '~/assets/models/project'
 
+const navLinks: Array<[string, string]> = [
+  ['About', 'about'],
+  ['Projects', 'projects'],
+  ['Contact', 'contact']
+]
+
 export default Vue.extend({
   components: {
-    Logo,
+    SmartNav,
     ProjectDeck
   },
   data() {
     return {
+      navLinks,
       ProjectSources,
       projects: [
         new Project(
