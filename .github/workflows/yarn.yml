@@ -44,7 +44,21 @@ jobs:
     - name: Upload Built Site
       uses: actions/upload-artifact@v1.0.0
       with:
-        # Artifact name
         name: static-latest
-        # Directory containing files to upload
         path: dist
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Built Site
+      uses: actions/download-artifact@v1.0.0
+      with:
+        name: static-latest
+        path: ./dist
+    - name: Deploy 🚀
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ./dist
