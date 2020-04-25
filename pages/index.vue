@@ -49,7 +49,7 @@ export default Vue.extend({
           ProjectSources.PortlandState
         ),
         new Project(
-          'A very empty project',
+          "A very empty project. This project is so empty that I have to spend a bunch of space writing about how empty it is. Also it was made in undergrad, so it's from Pacific.",
           null,
           null,
           [],

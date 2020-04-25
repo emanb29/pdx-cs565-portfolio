@@ -20,11 +20,11 @@
           </a>
           <span v-else class="project-title nolink">{{ displayTitle }}</span>
         </h3>
-        <slot></slot>
+        <span class="project-description"><slot></slot></span>
       </div>
       <b-badge
         v-if="_technologies.length !== 0"
-        class="bg-primary mx-n3 mb-3 py-2 d-block techs-ribbon"
+        class="bg-primary mx-n3 py-2 d-block techs-ribbon"
       >
         <span v-for="tech in _technologies" :key="tech" class="tech-name">
           {{ tech }}
@@ -102,6 +102,14 @@ export default Vue.extend({
   }
   .techs-ribbon {
     font-weight: lighter;
+    /**
+      card-body has a larger vertical padding than the rest, but if there's a techs bar, this looks unbalanced
+      Thus we need to offset upwards by the difference between card-spacer-y (the internal vertical padding)
+      and card-spacer-x (the default for card-body/outer padding).
+      This does leave the project source a bit distant, but I kind of like that.
+    */
+    margin-top: -($card-spacer-x - $card-spacer-y);
+    margin-bottom: $card-spacer-y;
     .tech-name:not(:first-child):before {
       content: '|';
     }
