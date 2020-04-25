@@ -1,22 +1,32 @@
 <template>
   <div class="container">
     <div class="w-100">
-      <logo />
-      <h1 class="title">
+      <h1 class="title display-1">
         Replay My Career
+        <br />
+        <small class="text-muted">A Card-Based Portfolio</small>
       </h1>
-      <h2 class="subtitle">
-        A Card-Based Portfolio
-      </h2>
-      <project-deck :projects="projects"></project-deck>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+      <section class="about">
+        <header class="h1">About Me</header>
+        <p class="lead">Here's a bit of stuff about me</p>
+      </section>
+      <section class="projects">
+        <header class="h1">My Projects</header>
+        <br />
+        <project-deck :projects="projects"></project-deck>
+      </section>
+      <section class="contact">
+        <header class="h1">Contact</header>
+        <p>[Contact info here]</p>
+      </section>
+      <div class="links mb-3">
+        <a href="https://nuxtjs.org/" target="_blank" class="btn btn-primary">
           Documentation
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey"
+          class="btn btn-secondary"
         >
           GitHub
         </a>
@@ -76,7 +86,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -84,24 +94,6 @@ export default Vue.extend({
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {
