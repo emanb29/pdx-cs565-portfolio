@@ -11,6 +11,7 @@
         :year="proj.year"
         :project-source="proj.source"
         :technologies="proj.techsUsed"
+        :project-url="proj.url"
       >
         {{ proj.description }}
       </project-card>

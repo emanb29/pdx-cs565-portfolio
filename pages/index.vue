@@ -57,33 +57,36 @@ export default Vue.extend({
       ProjectSources,
       projects: [
         new Project(
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis.',
-          'Example Project',
+          "A Nuxt.JS theme for a porfolio website with a card-based UI, written as part of the CS565 Full Stack Web Development class at PSU. It's this website! Complete with automatic CI/CD via GitHub Actions to Github Pages.",
+          'Replay My Career',
+          2020,
+          ['Bootstrap', 'Vue', 'Nuxt.JS', 'Github Actions'],
+          ProjectSources.PortlandState,
+          'https://github.com/emanb29/pdx-cs565-portfolio'
+        ),
+        new Project(
+          'An open-source library for manipulating long-packed bits in Scala with a functional interface. Originally written in support of cryptography projects, but has come in handy for all kinds of security and [de]serialization scripts since.',
+          'BitChunk',
+          2020,
+          ['Scala'],
+          null,
+          'https://github.com/emanb29/BitChunk'
+        ),
+        new Project(
+          `A survey of game-theoretic models for assessing security of cyber-physical systems, resulting in an implementation of Zaruhi Aslanyan's formulation of "Attack-Defense Trees", as well as her efficient algorithm for calculating the most- and least-optimal Pareto frontiers of strategies over those trees.`,
+          'Capstone Paper',
           2019,
-          ['TypeScript', 'CSS', 'Bootstrap', 'Nuxt.JS', 'Vue'],
-          ProjectSources.PortlandState
+          ['Game Theory', 'Graph', 'Scala'],
+          ProjectSources.Pacific,
+          'https://drive.google.com/file/d/17OuRY-ZqcYKEPfIIWdePI3NfISRSTLFt/view?usp=sharing'
         ),
         new Project(
-          "A very empty project. This project is so empty that I have to spend a bunch of space writing about how empty it is. Also it was made in undergrad, so it's from Pacific.",
+          'A mobile app to download images from clipboard or social media and pad them to squares. Designed to assist in managing Instagram pages.',
+          'Posti',
+          2019,
+          ['Android', 'Kotlin'],
           null,
-          null,
-          [],
-          ProjectSources.Pacific
-        ),
-        new Project('A very empty project', null, 2020),
-        new Project(
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis.',
-          'Example Project',
-          2017,
-          ['TypeScript', 'CSS', 'Bootstrap', 'Nuxt.JS', 'Vue'],
-          ProjectSources.PortlandState
-        ),
-        new Project(
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima asperiores neque, maiores, blanditiis aliquam magni eveniet perspiciatis fugit sapiente vel corporis excepturi fugiat sed rem aut iusto laboriosam qui officiis.',
-          'Example Project',
-          2017,
-          ['TypeScript', 'CSS', 'Bootstrap', 'Nuxt.JS', 'Vue'],
-          ProjectSources.PortlandState
+          'https://play.google.com/store/apps/details?id=me.ethanbell.posti'
         )
       ]
     }

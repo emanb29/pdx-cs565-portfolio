@@ -29,10 +29,16 @@
         {{ tech }}
       </span>
     </b-badge>
-    <div v-if="projectSource" class="project-src mb-2">
-      (at
-      <img :src="projectSource.icon" :alt="projectSource.alt" class="icon" />
-      {{ projectSource.name }})
+    <div class="project-src my-2">
+      <span v-if="projectSource">
+        (at
+        <img
+          :src="projectSource.icon"
+          :alt="projectSource.alt"
+          class="icon h-100"
+        />
+        {{ projectSource.name }})
+      </span>
     </div>
   </div>
 </template>
@@ -104,16 +110,12 @@ export default Vue.extend({
       This does leave the project source a bit distant, but I kind of like that.
     */
     margin-top: -($card-spacer-x - $card-spacer-y);
-    margin-bottom: $card-spacer-y;
     .tech-name:not(:first-child):before {
       content: '|';
     }
   }
   .project-src {
-    .icon {
-      display: inline-block;
-      height: 1.5em;
-    }
+    height: 1.5em;
   }
 }
 </style>
