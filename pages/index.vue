@@ -3,36 +3,29 @@
     <smart-nav :links="navLinks" />
     <div class="container">
       <div class="w-100">
-        <h1 class="title display-1">
-          Replay My Career
-          <br />
-          <small class="text-muted">A Card-Based Portfolio</small>
-        </h1>
+        <section class="title">
+          <h1 class="title display-1">
+            Replay My Career
+            <br />
+            <small class="text-muted">A Card-Based Portfolio</small>
+          </h1>
+        </section>
         <section id="about" class="about">
           <header class="h1">About Me</header>
-          <p class="lead">Here's a bit of stuff about me</p>
+          <p class="lead text-left border border-secondary rounded p-3">
+            Lifelong learner with a focus on integrating new technologies to
+            create powerful and secure applications. Current interests include
+            penetration testing, functional programming, and stream processing.
+          </p>
         </section>
         <section id="projects" class="projects">
           <header class="h1">My Projects</header>
-          <br />
           <project-deck :projects="projects"></project-deck>
         </section>
         <section id="contact" class="contact">
           <header class="h1">Contact</header>
-          <p>[Contact info here]</p>
+          <contact-card />
         </section>
-        <div class="links mb-3">
-          <a href="https://nuxtjs.org/" target="_blank" class="btn btn-primary">
-            Documentation
-          </a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="btn btn-secondary"
-          >
-            GitHub
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -42,6 +35,7 @@
 import Vue from 'vue'
 import SmartNav from '~/components/SmartNav.vue'
 import ProjectDeck from '~/components/ProjectDeck.vue'
+import ContactCard from '~/components/ContactCard.vue'
 import { ProjectSources } from '~/assets/models/project-sources'
 import { Project } from '~/assets/models/project'
 
@@ -54,7 +48,8 @@ const navLinks: Array<[string, string]> = [
 export default Vue.extend({
   components: {
     SmartNav,
-    ProjectDeck
+    ProjectDeck,
+    ContactCard
   },
   data() {
     return {
@@ -97,6 +92,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '@/assets/scss/bootstrap_config.scss';
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -105,8 +101,7 @@ export default Vue.extend({
   align-items: center;
   text-align: center;
 }
-
-.links {
-  padding-top: 15px;
+section {
+  margin-bottom: map-get($spacers, 4);
 }
 </style>
