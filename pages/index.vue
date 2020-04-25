@@ -105,9 +105,6 @@ export default Vue.extend({
   align-items: center;
   text-align: center;
 }
-:target {
-  padding-top: 57px + 10px; // 57px is the magic value for the height of the navbar
-}
 
 .links {
   padding-top: 15px;
