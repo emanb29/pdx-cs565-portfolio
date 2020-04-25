@@ -3,7 +3,7 @@
     <project-card
       v-for="proj in _projects"
       :key="proj.name + ': ' + proj.description"
-      class="col-12 col-md-5 col-xl-3 px-0 my-3"
+      class="col-12 col-md-5 col-xl-3 px-0 my-2"
       :title="proj.name"
       :year="proj.year"
       :project-source="proj.source"

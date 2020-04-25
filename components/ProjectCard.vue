@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card-wrapper px-4 px-sm-0">
+  <div class="project-card-wrapper px-3 px-sm-0">
     <div class="card project-card d-flex">
       <div
         v-if="year !== null"
@@ -24,7 +24,7 @@
           <slot></slot>
         </p>
       </div>
-      <b-badge class="bg-primary mx-n3 mb-2 py-2 d-block">
+      <b-badge class="bg-primary mx-n3 mb-2 py-2 d-block techs-ribbon">
         Technologies ribbon
       </b-badge>
       <div v-if="projectSource" class="project-src mb-2">
@@ -85,7 +85,11 @@ export default Vue.extend({
     .year {
       right: -1 * $spacer;
       top: map-get($spacers, 1) - map-get($spacers, 3);
+      font-size: 80%;
     }
+  }
+  .techs-ribbon {
+    font-weight: lighter;
   }
   .project-src {
     .icon {
