@@ -1,5 +1,11 @@
 <template>
-  <b-navbar type="light" class="bg-white border-bottom" toggleable="md" sticky>
+  <b-navbar
+    role="navigation"
+    type="light"
+    class="bg-white border-bottom"
+    toggleable="md"
+    sticky
+  >
     <b-navbar-brand v-scroll-to="'#top'" href="#top">Portfolio</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
