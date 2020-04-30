@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  background-image: url('~assets/squirreldash.png');
+  background-image: url('~assets/images/squirreldash.png');
   background-repeat: no-repeat;
   background-size: 200px;
   background-position: bottom 20px right 20px;

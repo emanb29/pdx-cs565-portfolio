@@ -11,11 +11,11 @@ export class ProjectSource {
 }
 
 export const Pacific = new ProjectSource(
-  require('~/assets/boxer.svg'),
+  require('~/assets/images/boxer.svg'),
   'Pacific University'
 )
 export const PortlandState = new ProjectSource(
-  require('~/assets/psu-monogram.svg'),
+  require('~/assets/images/psu-monogram.svg'),
   'Portland State University',
   "The Portland State University logo includes intertwined letters P, S and U that represent the interconnectedness of the university to the city, region and world, and the words 'Portland State University'."
 )
